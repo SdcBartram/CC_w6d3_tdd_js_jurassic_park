@@ -4,6 +4,12 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function () {
 
+  let dinosaur1;
+  let dinosaur2;
+  let dinosaur3;
+
+  let dinosaurCollection;
+  
   let park;
 
   beforeEach(function () {
