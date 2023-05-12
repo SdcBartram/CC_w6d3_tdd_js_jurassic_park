@@ -9,7 +9,7 @@ describe('Park', function () {
   let dinosaur3;
 
   let dinosaurCollection;
-  
+
   let park;
 
   beforeEach(function () {
@@ -51,6 +51,8 @@ describe('Park', function () {
       assert.deepStrictEqual(actual, [dinosaur1, dinosaur3]);
     });
 
+    //could also test that no change to the collection if dinosaur to remove is not found
+
     it('should be able to find the dinosaur that attracts the most visitors', function () {
       const actual = park.findMostPopularDinosaur();
       assert.deepStrictEqual(actual, dinosaur3)
@@ -59,7 +61,7 @@ describe('Park', function () {
     it('should be able to find all dinosaurs of a particular species', function () {
       const actual = park.findDinosaurBySpecies('raptor')
       assert.deepStrictEqual(actual, [dinosaur3])
-    });
+    }); // could add more dinosaurs of same species
 
     it('should be able to calculate the total number of visitors per day', function () {
       const actual = park.totalVisitorsPerDay()

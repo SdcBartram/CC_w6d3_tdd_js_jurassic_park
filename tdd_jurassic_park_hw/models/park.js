@@ -14,8 +14,11 @@ Park.prototype.addDinosaur = function (dinosaur) {
 
 Park.prototype.removeDinosaur = function (dinosaur) {
     const index = this.dinosaurCollection.indexOf(dinosaur)
+    if (index === -1) return // check can be put in place to make sure dinosaur is in the list before removal or check that index is not -1 (if (index === -1) return)
     this.dinosaurCollection.splice(index, 1)
 }
+
+
 
 
 // popular dino - assign variable
@@ -25,8 +28,8 @@ Park.prototype.removeDinosaur = function (dinosaur) {
 // once loop has completed
 // return the most popular dinosaur
 Park.prototype.findMostPopularDinosaur = function () {
-    let mostPopularDinosaur = null
-    let maxGuests = 0
+    let mostPopularDinosaur = null // could assume the first one is the most popular so let mostPopularDinosaur = this.dinosaurCollecxtion[0]
+    let maxGuests = 0 // not necessary can just track the dino and check that > mostPopularDinosaur.guestsAttractedPerDay
 
     for (const dinosaur of this.dinosaurCollection) {
         if (dinosaur.guestsAttractedPerDay > maxGuests) {
